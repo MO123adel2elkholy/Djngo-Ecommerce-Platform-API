@@ -4,7 +4,7 @@ pytest_plugins = [
   
     "src.ecommerce.test.selenium",
     "src.ecommerce.test.fixtures",
-    # "ecommerce.tests.factories",
+    "ecommerce.test.factories",
 ]
 
 
