@@ -87,12 +87,12 @@ class StockFactory(factory.django.DjangoModelFactory):
     units_sold = 100
 
 
-# class ProductAttributeFactory(factory.django.DjangoModelFactory):
-#     class Meta:
-#         model = models.ProductAttribute
+class ProductAttributeFactory(factory.django.DjangoModelFactory):
+    class Meta:
+        model = models.ProductAttribute
 
-#     name = factory.Sequence(lambda n: "attribute_name_%d" % n)
-#     description = factory.Sequence(lambda n: "description_%d" % n)
+    name = factory.Sequence(lambda n: "attribute_name_%d" % n)
+    description = factory.Sequence(lambda n: "description_%d" % n)
 
 
 # class ProductAttributeValueFactory(factory.django.DjangoModelFactory):
@@ -129,6 +129,6 @@ register(BrandFactory)
 register(ProductInventoryFactory)
 register(MediaFactory)
 register(StockFactory)
-# register(ProductAttributeFactory)
+register(ProductAttributeFactory)
 # register(ProductAttributeValueFactory)
 # register(ProductWithAttributeValuesFactory)

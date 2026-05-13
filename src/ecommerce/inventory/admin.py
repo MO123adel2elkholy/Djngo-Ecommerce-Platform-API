@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Category ,Product , ProductInventory , ProductType , Brand , Media ,Stock
+from .models import Category ,Product , ProductInventory , ProductType , Brand , Media ,Stock, ProductAttribute
 # Register your models here.
 
 admin.site.register(Category)
@@ -9,3 +9,4 @@ admin.site.register(ProductType)
 admin.site.register(Brand)
 admin.site.register(Media)
 admin.site.register(Stock)
+admin.site.register(ProductAttribute)
