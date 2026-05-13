@@ -123,7 +123,7 @@ class ProductFactory(factory.django.DjangoModelFactory):
 
 
 register(CategoryFactory)
-# register(ProductFactory)
+register(ProductFactory)
 # register(ProductTypeFactory)
 # register(BrandFactory)
 # register(ProductInventoryFactory)
