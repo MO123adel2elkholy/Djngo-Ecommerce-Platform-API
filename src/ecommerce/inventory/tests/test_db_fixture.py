@@ -226,58 +226,58 @@ def test_inventory_db_brand_uniqueness_integrity(db, brand_factory):
         brand_factory.create(name="not_unique")
 
 
-# @pytest.mark.dbfixture
-# @pytest.mark.parametrize(
-#     "id, product_inventory, image, alt_text, is_feature, created_at, updated_at",
-#     [
-#         (
-#             1,
-#             1,
-#             "images/default.png",
-#             "a default image solid color",
-#             1,
-#             "2021-09-04 22:14:18",
-#             "2021-09-04 22:14:18",
-#         ),
-#         (
-#             8616,
-#             8616,
-#             "images/default.png",
-#             "a default image solid color",
-#             1,
-#             "2021-09-04 22:14:18",
-#             "2021-09-04 22:14:18",
-#         ),
-#     ],
-# )
-# def test_inventory_db_media_dataset(
-#     db,
-#     db_fixture_setup,
-#     id,
-#     product_inventory,
-#     image,
-#     alt_text,
-#     is_feature,
-#     created_at,
-#     updated_at,
-# ):
-#     result = models.Media.objects.get(id=id)
-#     result_created_at = result.created_at.strftime("%Y-%m-%d %H:%M:%S")
-#     result_updated_at = result.updated_at.strftime("%Y-%m-%d %H:%M:%S")
-#     assert result.product_inventory.id == product_inventory
-#     assert result.image == image
-#     assert result.alt_text == alt_text
-#     assert result.is_feature == is_feature
-#     assert result_created_at == created_at
-#     assert result_updated_at == updated_at
+@pytest.mark.dbfixture
+@pytest.mark.parametrize(
+    "id, product_inventory, image, alt_text, is_feature, created_at, updated_at",
+    [
+        (
+            1,
+            1,
+            "images/default.png",
+            "a default image solid color",
+            1,
+            "2021-09-04 22:14:18",
+            "2021-09-04 22:14:18",
+        ),
+        (
+            8616,
+            8616,
+            "images/default.png",
+            "a default image solid color",
+            1,
+            "2021-09-04 22:14:18",
+            "2021-09-04 22:14:18",
+        ),
+    ],
+)
+def test_inventory_db_media_dataset(
+    db,
+    db_fixture_setup,
+    id,
+    product_inventory,
+    image,
+    alt_text,
+    is_feature,
+    created_at,
+    updated_at,
+):
+    result = models.Media.objects.get(id=id)
+    result_created_at = result.created_at.strftime("%Y-%m-%d %H:%M:%S")
+    result_updated_at = result.updated_at.strftime("%Y-%m-%d %H:%M:%S")
+    assert result.product_inventory.id == product_inventory
+    assert result.image == image
+    assert result.alt_text == alt_text
+    assert result.is_feature == is_feature
+    assert result_created_at == created_at
+    assert result_updated_at == updated_at
 
 
-# def test_inventory_db_media_insert_data(db, media_factory):
-#     new_media = media_factory.create(product_inventory__sku="123456789")
-#     assert new_media.product_inventory.sku == "123456789"
-#     assert new_media.image == "images/default.png"
-#     assert new_media.alt_text == "a default image solid color"
-#     assert new_media.is_feature == 1
+def test_inventory_db_media_insert_data(db, media_factory):
+    # new_media = media_factory.create(product_inventory__sku="123456789")
+    # assert new_media.product_inventory.sku == "123456789"
+    # assert new_media.image == "images/default.png"
+    # assert new_media.alt_text == "a default image solid color"
+    # assert new_media.is_feature == 1
 
 
 # @pytest.mark.dbfixture
@@ -312,70 +312,70 @@ def test_inventory_db_brand_uniqueness_integrity(db, brand_factory):
 #     assert new_stock.units_sold == 100
 
 
-# @pytest.mark.dbfixture
-# @pytest.mark.parametrize(
-#     "id, name, description",
-#     [
-#         (1, "men-shoe-size", "men shoe size"),
-#     ],
-# )
-# def test_inventory_db_product_attribute_dataset(
-#     db, db_fixture_setup, id, name, description
-# ):
-#     result = models.ProductAttribute.objects.get(id=id)
-#     assert result.name == name
-#     assert result.description == description
+# # @pytest.mark.dbfixture
+# # @pytest.mark.parametrize(
+# #     "id, name, description",
+# #     [
+# #         (1, "men-shoe-size", "men shoe size"),
+# #     ],
+# # )
+# # def test_inventory_db_product_attribute_dataset(
+# #     db, db_fixture_setup, id, name, description
+# # ):
+# #     result = models.ProductAttribute.objects.get(id=id)
+# #     assert result.name == name
+# #     assert result.description == description
 
 
-# def test_inventory_db_product_attrubite_insert_data(
-#     db, product_attribute_factory
-# ):
-#     new_attribute = product_attribute_factory.create()
-#     assert new_attribute.name == "attribute_name_0"
-#     assert new_attribute.description == "description_0"
+# # def test_inventory_db_product_attrubite_insert_data(
+# #     db, product_attribute_factory
+# # ):
+# #     new_attribute = product_attribute_factory.create()
+# #     assert new_attribute.name == "attribute_name_0"
+# #     assert new_attribute.description == "description_0"
 
 
-# def test_inventory_db_product_attrubite_uniqueness_integrity(
-#     db, product_attribute_factory
-# ):
-#     product_attribute_factory.create(name="not_unique")
-#     with pytest.raises(IntegrityError):
-#         product_attribute_factory.create(name="not_unique")
+# # def test_inventory_db_product_attrubite_uniqueness_integrity(
+# #     db, product_attribute_factory
+# # ):
+# #     product_attribute_factory.create(name="not_unique")
+# #     with pytest.raises(IntegrityError):
+# #         product_attribute_factory.create(name="not_unique")
 
 
-# @pytest.mark.dbfixture
-# @pytest.mark.parametrize(
-#     "id, product_attribute, attribute_value",
-#     [
-#         (1, 1, 10),
-#     ],
-# )
-# def test_inventory_db_product_attribute_dataset(
-#     db, db_fixture_setup, id, product_attribute, attribute_value
-# ):
-#     result = models.ProductAttributeValue.objects.get(id=1)
-#     assert result.product_attribute.id == 1
-#     assert result.attribute_value == "10"
+# # @pytest.mark.dbfixture
+# # @pytest.mark.parametrize(
+# #     "id, product_attribute, attribute_value",
+# #     [
+# #         (1, 1, 10),
+# #     ],
+# # )
+# # def test_inventory_db_product_attribute_dataset(
+# #     db, db_fixture_setup, id, product_attribute, attribute_value
+# # ):
+# #     result = models.ProductAttributeValue.objects.get(id=1)
+# #     assert result.product_attribute.id == 1
+# #     assert result.attribute_value == "10"
 
 
-# def test_inventory_db_product_attribute_value_data(
-#     db, product_attribute_value_factory
-# ):
-#     new_attribute_value = product_attribute_value_factory.create(
-#         attribute_value="new_value", product_attribute__name="new_value"
-#     )
-#     assert new_attribute_value.attribute_value == "new_value"
-#     assert new_attribute_value.product_attribute.name == "new_value"
+# # def test_inventory_db_product_attribute_value_data(
+# #     db, product_attribute_value_factory
+# # ):
+# #     new_attribute_value = product_attribute_value_factory.create(
+# #         attribute_value="new_value", product_attribute__name="new_value"
+# #     )
+# #     assert new_attribute_value.attribute_value == "new_value"
+# #     assert new_attribute_value.product_attribute.name == "new_value"
 
 
-# def test_inventory_db_insert_inventory_product_values(
-#     db, product_with_attribute_values_factory
-# ):
+# # def test_inventory_db_insert_inventory_product_values(
+# #     db, product_with_attribute_values_factory
+# # ):
 
-#     new_inv_attribute = product_with_attribute_values_factory(sku="123456789")
-#     result = models.ProductInventory.objects.get(sku="123456789")
-#     count = result.attribute_values.all().count()
-#     assert count == 2
+# #     new_inv_attribute = product_with_attribute_values_factory(sku="123456789")
+# #     result = models.ProductInventory.objects.get(sku="123456789")
+# #     count = result.attribute_values.all().count()
+# #     assert count == 2
 
 
 
