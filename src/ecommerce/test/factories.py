@@ -38,34 +38,34 @@ class ProductFactory(factory.django.DjangoModelFactory):
                 self.category.add(cat)
 
 
-# class ProductTypeFactory(factory.django.DjangoModelFactory):
-#     class Meta:
-#         model = models.ProductType
+class ProductTypeFactory(factory.django.DjangoModelFactory):
+    class Meta:
+        model = models.ProductType
 
-#     name = factory.Sequence(lambda n: "type_%d" % n)
-
-
-# class BrandFactory(factory.django.DjangoModelFactory):
-#     class Meta:
-#         model = models.Brand
-
-#     name = factory.Sequence(lambda n: "brand_%d" % n)
+    name = factory.Sequence(lambda n: "type_%d" % n)
 
 
-# class ProductInventoryFactory(factory.django.DjangoModelFactory):
-#     class Meta:
-#         model = models.ProductInventory
+class BrandFactory(factory.django.DjangoModelFactory):
+    class Meta:
+        model = models.Brand
 
-#     sku = factory.Sequence(lambda n: "sku_%d" % n)
-#     upc = factory.Sequence(lambda n: "upc_%d" % n)
-#     product_type = factory.SubFactory(ProductTypeFactory)
-#     product = factory.SubFactory(ProductFactory)
-#     brand = factory.SubFactory(BrandFactory)
-#     is_active = 1
-#     retail_price = 97
-#     store_price = 92
-#     sale_price = 46
-#     weight = 987
+    name = factory.Sequence(lambda n: "brand_%d" % n)
+
+
+class ProductInventoryFactory(factory.django.DjangoModelFactory):
+    class Meta:
+        model = models.ProductInventory
+
+    sku = factory.Sequence(lambda n: "sku_%d" % n)
+    upc = factory.Sequence(lambda n: "upc_%d" % n)
+    product_type = factory.SubFactory(ProductTypeFactory)
+    product = factory.SubFactory(ProductFactory)
+    brand = factory.SubFactory(BrandFactory)
+    is_active = 1
+    retail_price = 97
+    store_price = 92
+    sale_price = 46
+    weight = 987
 
 
 # class MediaFactory(factory.django.DjangoModelFactory):
@@ -124,9 +124,9 @@ class ProductFactory(factory.django.DjangoModelFactory):
 
 register(CategoryFactory)
 register(ProductFactory)
-# register(ProductTypeFactory)
-# register(BrandFactory)
-# register(ProductInventoryFactory)
+register(ProductTypeFactory)
+register(BrandFactory)
+register(ProductInventoryFactory)
 # register(MediaFactory)
 # register(StockFactory)
 # register(ProductAttributeFactory)
