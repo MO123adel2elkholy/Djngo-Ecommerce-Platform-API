@@ -3,7 +3,7 @@ from ecommerce.inventory import models
 
 @pytest.mark.dbfixture
 @pytest.mark.parametrize(
-    "id, name , slug , is_active",
+     "id, name, slug, is_active",
     [
         (1, "fashion", 'fashion',1) ,
         (2, "men", 'men',1) ,
@@ -11,7 +11,7 @@ from ecommerce.inventory import models
 
     ]
 )
-def test_inventory_category_db_fixture(db , django_db_setup, id, name , slug , is_active):
+def test_inventory_category_db_fixture(db , db_fixture_setup, id, name , slug , is_active):
     result = models.Category.objects.get(id=id) 
     assert result.name == name
     assert result.slug == slug
@@ -22,7 +22,7 @@ def test_inventory_category_db_fixture(db , django_db_setup, id, name , slug , i
 
 
 
-@pytest.mark.db_fixture
+@pytest.mark.dbfixture
 @pytest.mark.parametrize(
     " name , slug , is_active",
     [
