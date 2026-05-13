@@ -78,13 +78,13 @@ class MediaFactory(factory.django.DjangoModelFactory):
     is_feature = True
 
 
-# class StockFactory(factory.django.DjangoModelFactory):
-#     class Meta:
-#         model = models.Stock
+class StockFactory(factory.django.DjangoModelFactory):
+    class Meta:
+        model = models.Stock
 
-#     product_inventory = factory.SubFactory(ProductInventoryFactory)
-#     units = 2
-#     units_sold = 100
+    product_inventory = factory.SubFactory(ProductInventoryFactory)
+    units = 2
+    units_sold = 100
 
 
 # class ProductAttributeFactory(factory.django.DjangoModelFactory):
@@ -127,8 +127,8 @@ register(ProductFactory)
 register(ProductTypeFactory)
 register(BrandFactory)
 register(ProductInventoryFactory)
-# register(MediaFactory)
-# register(StockFactory)
+register(MediaFactory)
+register(StockFactory)
 # register(ProductAttributeFactory)
 # register(ProductAttributeValueFactory)
 # register(ProductWithAttributeValuesFactory)
