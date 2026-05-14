@@ -4,7 +4,7 @@ from django.core.management.base import BaseCommand
 
 class Command(BaseCommand):
     def handle(self, *args, **kwargs):
-
+        # call_command("flush", interactive=False)
         call_command("makemigrations")
         call_command("migrate")
         # try by fixture name first (Django app fixture dirs / FIXTURE_DIRS)
