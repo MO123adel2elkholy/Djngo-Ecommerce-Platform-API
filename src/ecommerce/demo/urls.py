@@ -6,5 +6,6 @@ app_name = "demo"
 
 urlpatterns = [
     path("", views.home, name="home"),
+    path("categories/", views.category),
    
 ]

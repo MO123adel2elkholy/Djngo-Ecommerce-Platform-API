@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Categories{% endblock %}
+
+{% block content %}
+  <h1>Categories</h1>
+  <ul>
+
+  {% load cache %}
+  {% cache 600 data %}
+          {% for x in data %}
+          <li>
+        {{x.name}}
+          </li>
+      {% endfor %}
+  {% endcache %}
+{% endblock %}

@@ -8,11 +8,11 @@ def home(request):
     return render(request, "index.html")
 
 
-# def category(request):
+def category(request):
 
-#     data = models.Category.objects.all()
+    data = models.Category.objects.all()
 
-#     return render(request, "categories.html", {"data": data})
+    return render(request, "categories.html", {"data": data})
 
 
 # def category(request):
