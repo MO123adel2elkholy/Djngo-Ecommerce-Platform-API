@@ -9,3 +9,10 @@ TDD stands for Test-Driven Development. It is a software development process tha
 
 # What is Fixtures
 Fixtures are a way to provide a fixed baseline for tests. They are used to set up the necessary conditions for a test to run, such as creating objects, initializing databases, or configuring the environment. Fixtures help ensure that tests are repeatable and consistent by providing a known state before each test is executed. In many testing frameworks, fixtures can be defined as functions or classes that are automatically called before and after tests to set up and tear down the test environment.
+
+
+# What is ElasticSearch 
+ElasticSearch is a distributed, RESTful search and analytics engine built on top of Apache Lucene. It is designed for horizontal scalability, reliability, and real-time search capabilities. ElasticSearch allows you to store, search, and analyze large volumes of data quickly and in near real-time. It is commonly used for log and event data analysis, full-text search, and as a backend for applications that require complex search functionality. ElasticSearch provides a powerful query language and supports various data types, making it a popular choice for building search applications and data analytics platforms.
+# What is KibanaKibana is an open-source data visualization and exploration tool that is part of the Elastic Stack (formerly known as the ELK Stack). It is designed to work with data stored in ElasticSearch and provides a user-friendly interface for visualizing and analyzing that data. Kibana allows users to create interactive
+
+
