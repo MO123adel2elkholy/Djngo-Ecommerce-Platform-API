@@ -1,7 +1,4 @@
 [
-
-   
-
   {
     "model": "inventory.category",
     "pk": 1,
@@ -20,8 +17,8 @@
     "model": "inventory.category",
     "pk": 2,
     "fields": {
-      "name": "men",
-      "slug": "men",
+      "name": "woman",
+      "slug": "woman",
       "parent": 1,
       "is_active": true,
       "lft": 2,
@@ -34,8 +31,8 @@
     "model": "inventory.category",
     "pk": 3,
     "fields": {
-      "name": "female",
-      "slug": "female",
+      "name": "shoes",
+      "slug": "shoes",
       "parent": 2,
       "is_active": true,
       "lft": 3,
